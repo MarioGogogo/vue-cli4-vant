@@ -18,10 +18,13 @@ import VueScroller from 'vue-scroller'
 import { get, post } from './JS/ajax'
 
 // Vant按需引入
-import { Button } from 'vant'
-Vue.use(Button)
-
-
+import { Grid, GridItem,Toast } from 'vant';
+Vue.use(Grid);
+Vue.use(GridItem);
+Vue.use(Toast);
+//全局注册指令
+import Directives from './util/directives'
+Vue.use(Directives)
 
 Vue.use(VueScroller)
 Vue.use(utils)

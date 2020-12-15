@@ -1,3 +1,10 @@
+/*
+ * @Descripttion: 
+ * @Author: Mario
+ * @Date: 2020-12-15 10:53:17
+ * @LastEditors: Maroi
+ * @LastEditTime: 2020-12-15 17:20:37
+ */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
@@ -15,6 +22,18 @@ const routes = [
     name: 'About',
     component: () => import('../views/About.vue'),
     meta: { title: '其他', keepAlive: false }
+  },
+  {
+    path: '/direct/copy',
+    name: 'copy',
+    component: () => import('../components/directives/copy.vue'),
+    meta: { title: 'copy', keepAlive: false }
+  },
+  {
+    path: '/direct/longpress',
+    name: 'longpress',
+    component: () => import('../components/directives/longpress.vue'),
+    meta: { title: 'copy', keepAlive: false }
   }
 ]
 
