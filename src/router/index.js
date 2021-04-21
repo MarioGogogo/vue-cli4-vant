@@ -1,45 +1,104 @@
 /*
- * @Descripttion: 
- * @Author: Mario
- * @Date: 2020-12-15 10:53:17
+ * @Author: your name
+ * @Date: 2020-11-13 21:43:50
+ * @LastEditTime: 2020-12-22 14:53:36
  * @LastEditors: Maroi
- * @LastEditTime: 2020-12-15 17:20:37
+ * @Description: In User Settings Edit
+ * @FilePath: /example-demo/src/router/index.js
  */
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Vue from "vue";
+import VueRouter from "vue-router";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: () => import('../views/Home.vue'),
-    meta: { title: '首页', keepAlive: false }
+    path: "/login",
+    name: "Login",
+    component: () => import(/* webpackChunkName: "drag" */ "../views/Login.vue"),
   },
   {
-    path: '/about',
-    name: 'About',
-    component: () => import('../views/About.vue'),
-    meta: { title: '其他', keepAlive: false }
+    path: "/home",
+    name: "Home",
+    component: () => import(/* webpackChunkName: "drag" */ "../views/Home.vue"),
+    meta: {
+      index: 0,
+    },
   },
   {
-    path: '/direct/copy',
-    name: 'copy',
-    component: () => import('../components/directives/copy.vue'),
-    meta: { title: 'copy', keepAlive: false }
+    path: "/message",
+    name: "Message",
+    component: () =>
+      import(/* webpackChunkName: "drag" */ "../views/Message.vue"),
+    meta: {
+      index: 0,
+    },
   },
   {
-    path: '/direct/longpress',
-    name: 'longpress',
-    component: () => import('../components/directives/longpress.vue'),
-    meta: { title: 'copy', keepAlive: false }
-  }
-]
+    path: "/setting",
+    name: "Setting",
+    component: () =>
+      import(/* webpackChunkName: "drag" */ "../views/Setting.vue"),
+    meta: {
+      index: 0,
+    },
+  },
+  {
+    path: "/v1.0",
+    name: "v",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Child.vue"),
+    children: [
+      {
+        path: "drag",
+        name: "Drag",
+        component: () =>
+          import(/* webpackChunkName: "drag" */ "../views/Drag.vue"),
+        meta: {
+          index: 1,
+        },
+      },
+      {
+        path: "promise",
+        name: "Promise",
+        component: () =>
+          import(/* webpackChunkName: "promise" */ "../views/Promise.vue"),
+        meta: {
+          index: 1,
+        },
+      },
+      {
+        path: "about",
+        name: "About",
+        component: () =>
+          import(/* webpackChunkName: "promise" */ "../views/About.vue"),
+        meta: {
+          index: 1,
+        },
+      },
+      {
+        path: "vmodal",
+        name: "VModal",
+        component: () =>
+          import(/* webpackChunkName: "vmodal" */ "../views/vmodal.vue"),
+        meta: {
+          index: 1,
+        },
+      },
+    ],
+  },
+  {
+    path: "/*",
+    name: "Home",
+    component: () => import(/* webpackChunkName: "drag" */ "../views/Home.vue"),
+    meta: {
+      index: 0,
+    },
+  },
+];
 
 const router = new VueRouter({
   routes,
-  scrollBehavior: () => ({ y: 0 })
-})
+});
 
-export default router
+export default router;
