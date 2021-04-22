@@ -1,8 +1,8 @@
 <!--
  * @Author: your name
  * @Date: 2020-11-13 00:34:57
- * @LastEditTime: 2020-11-28 18:07:04
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-12-22 14:45:05
+ * @LastEditors: Maroi
  * @Description: In User Settings Edit
  * @FilePath: /example-demo/src/views/Home.vue
 -->
@@ -38,7 +38,7 @@ export default {
   name: "Home",
   data() {
     return {
-      modules:['drag','promise','about','文字2','文字3'],
+      modules:['drag','promise','about','vmodal','文字3'],
       active: 0,
       count: 0,
       isLoading: false,
@@ -46,11 +46,9 @@ export default {
       curHeight: 571, //当前所需屏幕高度
     };
   },
-
   beforeCreate(){
     this.curHeight = 571
   },
-
   //获取屏幕高度
   beforeMount() {
       if(this.curHeight) return
@@ -59,7 +57,6 @@ export default {
     // this.curHeight = h - 46 -50; //减去页面上固定高度height
     // console.log("beforeMount -curHeight :>> ", this.curHeight);
   },
-
   methods: {
     onRefresh() {
      this.$api.article.articleDetail('id', {        

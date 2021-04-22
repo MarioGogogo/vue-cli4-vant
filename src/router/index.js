@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-11-13 21:43:50
- * @LastEditTime: 2020-12-21 22:57:05
+ * @LastEditTime: 2020-12-22 14:53:36
  * @LastEditors: Maroi
  * @Description: In User Settings Edit
  * @FilePath: /example-demo/src/router/index.js
@@ -15,15 +15,15 @@ const routes = [
   {
     path: "/login",
     name: "Login",
-    component: () => import(/* webpackChunkName: "drag" */ "../views/Login.vue")
+    component: () => import(/* webpackChunkName: "drag" */ "../views/Login.vue"),
   },
   {
     path: "/home",
     name: "Home",
     component: () => import(/* webpackChunkName: "drag" */ "../views/Home.vue"),
     meta: {
-      index: 0
-    }
+      index: 0,
+    },
   },
   {
     path: "/message",
@@ -31,8 +31,8 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "drag" */ "../views/Message.vue"),
     meta: {
-      index: 0
-    }
+      index: 0,
+    },
   },
   {
     path: "/setting",
@@ -40,8 +40,8 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "drag" */ "../views/Setting.vue"),
     meta: {
-      index: 0
-    }
+      index: 0,
+    },
   },
   {
     path: "/v1.0",
@@ -55,8 +55,8 @@ const routes = [
         component: () =>
           import(/* webpackChunkName: "drag" */ "../views/Drag.vue"),
         meta: {
-          index: 1
-        }
+          index: 1,
+        },
       },
       {
         path: "promise",
@@ -64,8 +64,8 @@ const routes = [
         component: () =>
           import(/* webpackChunkName: "promise" */ "../views/Promise.vue"),
         meta: {
-          index: 1
-        }
+          index: 1,
+        },
       },
       {
         path: "about",
@@ -73,23 +73,32 @@ const routes = [
         component: () =>
           import(/* webpackChunkName: "promise" */ "../views/About.vue"),
         meta: {
-          index: 1
-        }
-      }
-    ]
+          index: 1,
+        },
+      },
+      {
+        path: "vmodal",
+        name: "VModal",
+        component: () =>
+          import(/* webpackChunkName: "vmodal" */ "../views/vmodal.vue"),
+        meta: {
+          index: 1,
+        },
+      },
+    ],
   },
   {
     path: "/*",
     name: "Home",
     component: () => import(/* webpackChunkName: "drag" */ "../views/Home.vue"),
     meta: {
-      index: 0
-    }
-  }
+      index: 0,
+    },
+  },
 ];
 
 const router = new VueRouter({
-  routes
+  routes,
 });
 
 export default router;

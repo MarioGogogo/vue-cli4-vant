@@ -1,4 +1,6 @@
-// vue.config.js
+/**
+ * vue.config.js配置文件
+ */
 const path = require('path')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const CompressionPlugin = require('compression-webpack-plugin')// 引入gzip压缩插件
