@@ -66,7 +66,7 @@
 
 <script>
 export default {
-  name: "Message",
+  name: "message",
   data() {
     return {
       loading: true,

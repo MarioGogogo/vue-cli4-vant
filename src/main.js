@@ -73,15 +73,15 @@ Vue.config.productionTip = false
 /*
  在路由首页进行判断。当to.meta.auth为true(需要登录)，且不存在登录信息缓存时，需要重定向去登录页面
 */
-router.beforeEach((to, from, next) => {
-  document.title = to.meta.title
-  const userInfo = sessionStorage.getItem('userInfo') || null
-  if (!userInfo && to.meta.auth) {
-    next('/login')
-  } else {
-    next()
-  }
-})
+// router.beforeEach((to, from, next) => {
+//   document.title = to.meta.title
+//   const userInfo = sessionStorage.getItem('userInfo') || null
+//   if (!userInfo && to.meta.auth) {
+//     next('/login')
+//   } else {
+//     next()
+//   }
+// })
 
 export default new Vue({
   el: '#app',

@@ -1,105 +1,111 @@
-<!--
- * @Author: your name
- * @Date: 2020-11-13 00:14:17
- * @LastEditTime: 2020-12-22 14:52:15
- * @LastEditors: Maroi
- * @Description: In User Settings Edit
- * @FilePath: /example-demo/src/App.vue
--->
 <template>
   <div id="app">
-    <!-- 页面切换动画transitionName -->
     <transition :name="transitionName">
-      <router-view class="view"></router-view>
+      <!-- 所有通过 router-view 加载的页面组件都会被缓存 -->
+      <keep-alive :include="virtualTaskStack">
+        <router-view />
+      </keep-alive>
     </transition>
-     <van-tabbar route class="tab" v-show="$route.meta.index === 0">
-      <van-tabbar-item replace to="/home" icon="home-o">首页</van-tabbar-item>
-      <van-tabbar-item to="/message" icon="comment-o">消息</van-tabbar-item>
-      <van-tabbar-item to="/setting" icon="setting-o">设置</van-tabbar-item>
-    </van-tabbar>
   </div>
 </template>
 
 <script>
 export default {
-  name: "App",
-  data() {
+  name: 'App',
+  data: function () {
     return {
-      transitionName: "",
-      active: 0,
-    };
+      transitionName: 'fold-left',
+      // 虚拟任务栈
+      virtualTaskStack: [
+        'main'
+      ]
+    }
   },
   watch: {
-    //使用watch 监听$router的变化
-    $route(to, from) {
-      console.log("to=" + to.meta.index, "from=" + from.meta.index)
-      //如果to索引大于from索引,判断为前进状态,反之则为后退状态
-      if (to.meta.index > 0 || to.meta.index ===  0  && from.meta.index !== 0) {
-        if (to.meta.index < from.meta.index) {
-          this.transitionName = "slide-right";
-        } else {
-          this.transitionName = "slide-left";
-        }
-      } else if (to.meta.index == 0 && from.meta.index == 0) {
-        this.transitionName = "";
+    // 监听路由对象，决定使用哪种过渡效果
+    '$route' (to, from) {
+      // 获取到携带的标记
+      const routerType = to.params.routerType
+      if (routerType === 'push') {
+        // 当进入新页面的时候，保存新页面名称到虚拟任务栈
+        this.virtualTaskStack.push(to.name)
+        // 跳转页面
+        this.transitionName = 'fold-right'
+      } else {
+        // 执行后退操作的时候，把最后一个页面从任务栈中弹出
+        this.virtualTaskStack.pop()
+        // 后退页面
+        this.transitionName = 'fold-left'
       }
-    },
-  },
-};
+      /**
+       * 初始化虚拟任务栈
+       */
+      if (to.params.clearTask) {
+        this.virtualTaskStack = ['main']
+      }
+    }
+  }
+}
 </script>
 
-<style>
+<style lang="less">
+// @import '@css/style.scss';
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-.view {
   width: 100%;
-  position: absolute;
-}
-/* 页面切换动画 */
-.slide-right-enter-active,
-.slide-right-leave-active,
-.slide-left-enter-active,
-.slide-left-leave-active {
-  /* will-change属性可以提前通知浏览器我们要对元素做什么动画，这样浏览器可以提前准备合适的优化设置 */
-  will-change: transform;
-  transition: all ease 0.4s;
-  -webkit-transition: all ease 0.4s;
-  position: absolute;
-  width: 100%;
-  left: 0;
-}
-.slide-right-enter {
-  transform: translateX(-100%);
-  -webkit-transform: translateX(-100%);
-}
-.slide-right-leave-active {
-  transform: translateX(100%);
-  -webkit-transform: translateX(100%);
-}
-.slide-left-enter {
-  transform: translateX(100%);
-  -webkit-transform: translateX(100%);
-}
-.slide-left-leave-active {
-  transform: translateX(-100%);
-  -webkit-transform: translateX(-100%);
-}
-.tab{
-   z-index: 999;
+  height: 100%;
+  // push 页面时：新页面的进入动画
+  .fold-left-enter-active {
+    animation-name: fold-left-in;
+    animation-duration:0.4s;
+  }
+  @keyframes fold-left-in {
+    0% {
+      transform: translate(100%, 0);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+
+  // push 页面时：原页面的退出动画
+  .fold-left-leave-active {
+    animation-name: fold-left-out;
+    animation-duration: 0.4s;
+  }
+  @keyframes fold-left-out {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(-100%, 0);
+    }
+  }
+  // 后退页面时：即将展示页面的动画
+  .fold-right-enter-active {
+    animation-name: fold-right-in;
+    animation-duration: 0.4s;
+  }
+  @keyframes fold-right-in {
+    0% {
+      transform: translate(-100%, 0);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+  // 后退页面时：后退的页面的动画
+  .fold-right-leave-active {
+    animation-name: fold-right-out;
+    animation-duration: 0.4s;
+  }
+  @keyframes fold-right-out {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(100%, 0);
+    }
+  }
 }
 </style>

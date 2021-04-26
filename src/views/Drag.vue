@@ -133,6 +133,12 @@ export default {
 </script>
 
 <style scoped>
+.playground{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+}
 h2 {
   margin-bottom: 10px;
 }
