@@ -1,9 +1,10 @@
 /*
- * @Descripttion: 
- * @Author: Mario
- * @Date: 2020-12-22 15:03:34
- * @LastEditors: Maroi
- * @LastEditTime: 2020-12-22 15:03:46
+ * @Author: your name
+ * @Date: 2020-11-28 17:49:35
+ * @LastEditTime: 2020-11-29 14:49:09
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /example-demo/src/utils/http/index.js
  */
 /**
  * axios封装

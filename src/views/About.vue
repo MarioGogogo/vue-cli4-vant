@@ -1,8 +1,8 @@
 <!--
  * @Author: your name
  * @Date: 2020-11-06 22:37:03
- * @LastEditTime: 2020-12-22 14:54:04
- * @LastEditors: Maroi
+ * @LastEditTime: 2020-11-28 16:11:23
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /example-demo/src/views/About.vue
 -->

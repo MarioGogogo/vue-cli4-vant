@@ -1,9 +1,10 @@
 /*
- * @Descripttion: 
- * @Author: Mario
- * @Date: 2020-12-22 15:03:11
- * @LastEditors: Maroi
- * @LastEditTime: 2020-12-22 15:03:12
+ * @Author: your name
+ * @Date: 2020-11-29 11:24:25
+ * @LastEditTime: 2020-11-29 14:22:14
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /example-demo/src/utils/http/tabApi.js
  */
 import base from './base'; // 导入接口域名列表
 import axios from './http'; // 导入http中创建的axios实例
