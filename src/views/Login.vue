@@ -9,12 +9,12 @@
 <template>
   <div class="login">
     <van-row type="flex" justify="center" class="img">
-      <van-col span="4">&nbsp</van-col>
+      <van-col span="4"></van-col>
       <van-col span="16"><img src="../assets/logo.png"/></van-col>
-      <van-col span="4">&nbsp</van-col>
+      <van-col span="4"></van-col>
     </van-row>
     <van-row type="flex" justify="center" class="line">
-      <van-col span="3">&nbsp</van-col>
+      <van-col span="3"></van-col>
       <van-col span="18">
         <van-cell-group>
           <van-field
@@ -43,10 +43,10 @@
           />
         </van-cell-group>
       </van-col>
-      <van-col span="3">&nbsp</van-col>
+      <van-col span="3"></van-col>
     </van-row>
     <van-row type="flex" justify="center" class="btns">
-      <van-col span="3">&nbsp</van-col>
+      <van-col span="3"></van-col>
       <van-col span="18">
         <van-button
           class="jumpBtn"
@@ -56,7 +56,7 @@
           >登录</van-button
         >
       </van-col>
-      <van-col span="3">&nbsp</van-col>
+      <van-col span="3"></van-col>
     </van-row>
     <van-popup v-model="show" round position="bottom" :style="{ height: '40%' }">
       <van-area  :area-list="areaList"  :columns-num="1"  @cancel='cancel' @confirm="confirm"/>

@@ -14,7 +14,7 @@ export default {
   name: 'App',
   data: function () {
     return {
-      transitionName: 'fold-left',
+      transitionName: '',
       // 虚拟任务栈
       virtualTaskStack: [
         'main'
@@ -25,22 +25,23 @@ export default {
     // 监听路由对象，决定使用哪种过渡效果
     '$route' (to, from) {
       // 获取到携带的标记
-      const routerType = to.params.routerType
+      const routerType = to.query.routerType
       if (routerType === 'push') {
         // 当进入新页面的时候，保存新页面名称到虚拟任务栈
         this.virtualTaskStack.push(to.name)
+        
         // 跳转页面
-        this.transitionName = 'fold-right'
+        this.transitionName = 'fold-left'
       } else {
         // 执行后退操作的时候，把最后一个页面从任务栈中弹出
         this.virtualTaskStack.pop()
         // 后退页面
-        this.transitionName = 'fold-left'
+        this.transitionName = 'fold-right'
       }
       /**
        * 初始化虚拟任务栈
        */
-      if (to.params.clearTask) {
+      if (to.query.clearTask) {
         this.virtualTaskStack = ['main']
       }
     }
@@ -57,7 +58,7 @@ export default {
   // push 页面时：新页面的进入动画
   .fold-left-enter-active {
     animation-name: fold-left-in;
-    animation-duration:0.4s;
+    animation-duration: 0.4s;
   }
   @keyframes fold-left-in {
     0% {

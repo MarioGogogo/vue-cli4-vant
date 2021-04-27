@@ -48,11 +48,7 @@
 </template>
 
 <script>
-<<<<<<< HEAD
-import { cancellableDelayResolve } from "../utils/cancelPromise";
-=======
 import { cancellableDelayResolve } from "../util/cancelPromise";
->>>>>>> c9f8d1f3ba4e96719060556a5adc7d2047138f51
 export default {
   name: "Promise",
   data() {

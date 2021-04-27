@@ -66,7 +66,7 @@ export default {
       console.log('event :>> ', event);
       this.$router.push({
         path: `/v1.0/${event}`,
-        params: {
+        query: {
           routerType: 'push'
         }
       })
@@ -79,7 +79,7 @@ export default {
 .home {
   width: 100%;
   height: 100%;
-  background-color: rgb(226, 101, 101);
+  background-color:white;
   overflow: hidden;
   overflow-y: auto;
   display: flex;

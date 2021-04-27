@@ -8,33 +8,46 @@
 -->
 <template>
   <div class="child">
-      <van-nav-bar title="子页面" left-arrow :safe-area-inset-top="true" @click-left="onClickLeft" />
-      <router-view class="view"></router-view>
+    <van-nav-bar title="子页面" left-arrow :safe-area-inset-top="true" @click-left="onClickLeft" />
+    <router-view class="view"></router-view>
   </div>
 </template>
 
 
 <script>
 export default {
-    name:"Child",
-    methods:{
-        onClickLeft(){
-            this.$router.go(-1)
-        }
+  name: "Child",
+  data(){
+    return {
+      virtualTaskStack:[]
     }
+  },
+  methods: {
+    onClickLeft () {
+      this.$router.go(-1)
+    }
+  }
 }
 </script>
 
 
 <style>
+.child {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
 .child .van-nav-bar {
   background: #3498db;
 }
 .van-nav-bar .van-nav-bar__content .van-nav-bar__title {
   color: #ecf0f1;
 }
-.van-nav-bar .van-nav-bar__content .van-nav-bar__left i{
-   color: #fff;
-   font-size: 20px;
+.van-nav-bar .van-nav-bar__content .van-nav-bar__left i {
+  color: #fff;
+  font-size: 20px;
 }
 </style>
