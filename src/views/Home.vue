@@ -30,7 +30,7 @@ export default {
   name: "home",
   data () {
     return {
-      modules: ['drag', 'promise', 'about', 'vmodal', '文字3'],
+      modules: ['drag', 'promise', 'about', 'vmodal', 'vcomp','from'],
       active: 0,
       count: 0,
       isLoading: false,

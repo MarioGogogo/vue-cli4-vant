@@ -14,7 +14,7 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/',
-    name: 'main',
+    name: 'vmain',
     component: () => import(/* webpackChunkName: "main" */ '../views/Main.vue'),
   },
   {
@@ -29,7 +29,7 @@ const routes = [
     children: [
       {
         path: 'drag',
-        name: 'Drag',
+        name: 'drag',
         component: () => import(/* webpackChunkName: "drag" */ '../views/Drag.vue'),
         meta: {
           index: 1,
@@ -37,7 +37,7 @@ const routes = [
       },
       {
         path: 'promise',
-        name: 'Promise',
+        name: 'promise',
         component: () => import(/* webpackChunkName: "promise" */ '../views/Promise.vue'),
         meta: {
           index: 1,
@@ -45,7 +45,7 @@ const routes = [
       },
       {
         path: 'about',
-        name: 'About',
+        name: 'about',
         component: () => import(/* webpackChunkName: "promise" */ '../views/About.vue'),
         meta: {
           index: 1,
@@ -53,8 +53,24 @@ const routes = [
       },
       {
         path: 'vmodal',
-        name: 'VModal',
+        name: 'vmodal',
         component: () => import(/* webpackChunkName: "vmodal" */ '../views/vmodal.vue'),
+        meta: {
+          index: 1,
+        },
+      },
+      {
+        path: 'vcomp',
+        name: 'vcomp',
+        component: () => import(/* webpackChunkName: "vmodal" */ '../views/VComp/VComp.vue'),
+        meta: {
+          index: 1,
+        },
+      },
+      {
+        path: 'from',
+        name: 'from',
+        component: () => import(/* webpackChunkName: "vmodal" */ '../views/Form/index.vue'),
         meta: {
           index: 1,
         },

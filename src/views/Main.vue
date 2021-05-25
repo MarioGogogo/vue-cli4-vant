@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: 'main',
+  name: 'vmain',
   components: {
     // 异步组件引入方式, 异步组件：只有在需要去展示这个组件的时候，才会把组件去进行渲染。
     'home': () => import('@/views/Home.vue'),
