@@ -2,22 +2,22 @@
   <div>
     <h1>自定义from</h1>
     <i-from :modal="formValidate" :rules="ruleValidate">
-      <i-from-item label="用户名" prop="name">
+      <i-form-item label="用户名" prop="name">
         <i-input v-model="formValidate.name"></i-input>
-      </i-from-item>
-      <i-from-item label="邮箱" prop="mail">
+      </i-form-item>
+      <i-form-item label="邮箱" prop="mail">
         <i-input v-model="formValidate.mail"></i-input>
-      </i-from-item>
+      </i-form-item>
     </i-from>
   </div>
 </template>
 
 <script>
 import iFrom from './From.vue';
-import iFromItem from './FromItem.vue';
+import iFormItem from './FromItem.vue';
 import iInput from './FromInput.vue';
 export default {
-  components: { iFrom, iFromItem, iInput },
+  components: { iFrom, iFormItem, iInput },
   data () {
     return {
       formValidate: {
