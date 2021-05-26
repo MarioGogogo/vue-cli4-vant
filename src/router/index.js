@@ -75,6 +75,22 @@ const routes = [
           index: 1,
         },
       },
+      {
+        path: 'findcomp',
+        name: 'componentA',
+        component: () => import(/* webpackChunkName: "vmodal" */ '../views/FindComp/FindComp.vue'),
+        meta: {
+          index: 1,
+        },
+      },
+      {
+        path: 'checkbox',
+        name: 'checkbox',
+        component: () => import(/* webpackChunkName: "vmodal" */ '../views/CheckBox/index.vue'),
+        meta: {
+          index: 1,
+        },
+      },
     ],
   },
 ];

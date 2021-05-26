@@ -1,5 +1,5 @@
 <template>
-  <input type="text" class="v-input" :value="currentValue" @input="handleInput" @blur="handleBlur" />
+    <input type="text" class="v-input" :value="currentValue" @input="handleInput" @blur="handleBlur" />
 </template>
 
 <script>
@@ -21,6 +21,7 @@ export default {
   methods: {
     // 每当输入一个字符，都会调用句柄 `handleInput`
     handleInput (event) {
+      console.log('开始1');
       const value = event.target.value;
       this.currentValue = value;
       this.$emit('input', value);
@@ -28,6 +29,7 @@ export default {
     },
     // 失去焦点
     handleBlur () {
+      console.log('开始2');
       this.dispatch('iFormItem', 'on-form-blur', this.currentValue);
     }
   },
@@ -40,7 +42,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.v-input{
+.v-input {
   border: 1px solid #999;
 }
 </style>

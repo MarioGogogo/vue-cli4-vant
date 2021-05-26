@@ -169,11 +169,11 @@ a:target {
     display: block;
 }
 
-* {
+/* * {
     -webkit-tap-highlight-color: transparent;
     -webkit-appearance: none;
     -webkit-backface-visibility: hidden;
-}
+} */
 
 input.checkbox {
     -webkit-appearance: checkbox;
