@@ -17,6 +17,7 @@ export default {
     }
   },
   methods: {
+    //自增长区别每一个弹窗
     getUuid () {
       return 'alert_' + (seed++);
     },

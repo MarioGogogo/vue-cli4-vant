@@ -1,6 +1,8 @@
 import Alert from './alert.vue'
 import Vue from 'vue'
 
+
+// alert.vue不是js对象文件 但是会被wepack编译render函数 最终生成一个js对象 就可以扩展 newInstance属性
 Alert.newInstance = properties =>{
    const props = properties || {}
 
