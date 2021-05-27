@@ -64,7 +64,7 @@ const routes = [
         name: 'vcomp',
         component: () => import(/* webpackChunkName: "vmodal" */ '../views/VComp/VComp.vue'),
         meta: {
-          index: 1
+          index: 1,
         },
       },
       {
@@ -76,11 +76,51 @@ const routes = [
         },
       },
       {
-        path: 'extend',
-        name: 'extend',
-        component: () => import(/* webpackChunkName: "vmodal" */ '../views/Extend.vue'),
+        path: 'findcomp',
+        name: 'componentA',
+        component: () => import(/* webpackChunkName: "vmodal" */ '../views/FindComp/FindComp.vue'),
         meta: {
-
+          index: 1,
+        },
+      },
+      {
+        path: 'checkbox',
+        name: 'checkbox',
+        component: () => import(/* webpackChunkName: "vmodal" */ '../views/CheckBox/index.vue'),
+        meta: {
+          index: 1,
+        },
+      },
+      {
+        path: 'alert',
+        name: 'alert',
+        component: () => import(/* webpackChunkName: "vmodal" */ '../views/Alert.vue'),
+        meta: {
+          index: 1,
+        },
+      },
+      {
+        path: 'table',
+        name: 'table',
+        component: () => import(/* webpackChunkName: "vmodal" */ '../views/table-render.vue'),
+        meta: {
+          index: 1,
+        },
+      },
+      {
+        path: 'slotscope',
+        name: 'slotscope',
+        component: () => import(/* webpackChunkName: "vmodal" */ '../views/slot-scope.vue'),
+        meta: {
+          index: 1,
+        },
+      },
+      {
+        path: 'iscomp',
+        name: 'iscomp',
+        component: () => import(/* webpackChunkName: "vmodal" */ '../views/isComp/isComp.vue'),
+        meta: {
+          index: 1,
         },
       },
     ],

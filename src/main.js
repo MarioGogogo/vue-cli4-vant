@@ -17,6 +17,10 @@ import './components/icon/index'
 // import Loading from './components/loading'
 // import toast from './components/toast'
 
+import Alert from '../src/components/alert/alert.js'
+
+Vue.prototype.$Alert = Alert
+
 import './JS/plugin'
 import './JS/FastClick'
 import filters from './JS/filter'
@@ -88,5 +92,6 @@ Vue.config.productionTip = false
 export default new Vue({
   el: '#app',
   router,
+  comments:true,
   render: h => h(App)
 })
