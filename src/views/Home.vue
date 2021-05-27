@@ -30,7 +30,7 @@ export default {
   name: "home",
   data () {
     return {
-      modules: ['drag', 'promise', 'about', 'vmodal', 'vcomp','ifrom','findcomp','checkbox'],
+      modules: ['drag', 'promise', 'about', 'vmodal', 'vcomp','ifrom','findcomp','checkbox','alert'],
       active: 0,
       count: 0,
       isLoading: false,

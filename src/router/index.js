@@ -91,6 +91,14 @@ const routes = [
           index: 1,
         },
       },
+      {
+        path: 'alert',
+        name: 'alert',
+        component: () => import(/* webpackChunkName: "vmodal" */ '../views/Alert.vue'),
+        meta: {
+          index: 1,
+        },
+      },
     ],
   },
 ];
