@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- 注释这里表示 -->
     <h5>未封装的buton</h5>
     <button @click="handleChange('A')">显示 A 组件</button>
     <button @click="handleChange('B')">显示 B 组件</button>

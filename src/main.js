@@ -90,5 +90,6 @@ Vue.config.productionTip = false
 export default new Vue({
   el: '#app',
   router,
+  comments:true,
   render: h => h(App)
 })
