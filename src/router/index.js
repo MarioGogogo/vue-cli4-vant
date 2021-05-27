@@ -64,7 +64,7 @@ const routes = [
         name: 'vcomp',
         component: () => import(/* webpackChunkName: "vmodal" */ '../views/VComp/VComp.vue'),
         meta: {
-          index: 1,
+          index: 1
         },
       },
       {
@@ -73,6 +73,14 @@ const routes = [
         component: () => import(/* webpackChunkName: "vmodal" */ '../views/Form/index.vue'),
         meta: {
           index: 1,
+        },
+      },
+      {
+        path: 'extend',
+        name: 'extend',
+        component: () => import(/* webpackChunkName: "vmodal" */ '../views/Extend.vue'),
+        meta: {
+
         },
       },
     ],
