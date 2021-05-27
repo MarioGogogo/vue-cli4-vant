@@ -27,9 +27,6 @@ import filters from './JS/filter'
 import utils from './JS/utils'
 import VueScroller from 'vue-scroller'
 
-import '../src/util/extend'
-
-
 // Vant按需引入
 // import { Grid, GridItem,Toast,Col, Row,Field,Button,Popup,Area } from 'vant';
 // Vue.use(Grid);
