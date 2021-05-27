@@ -99,6 +99,30 @@ const routes = [
           index: 1,
         },
       },
+      {
+        path: 'table',
+        name: 'table',
+        component: () => import(/* webpackChunkName: "vmodal" */ '../views/table-render.vue'),
+        meta: {
+          index: 1,
+        },
+      },
+      {
+        path: 'slotscope',
+        name: 'slotscope',
+        component: () => import(/* webpackChunkName: "vmodal" */ '../views/slot-scope.vue'),
+        meta: {
+          index: 1,
+        },
+      },
+      {
+        path: 'iscomp',
+        name: 'iscomp',
+        component: () => import(/* webpackChunkName: "vmodal" */ '../views/isComp/isComp.vue'),
+        meta: {
+          index: 1,
+        },
+      },
     ],
   },
 ];
