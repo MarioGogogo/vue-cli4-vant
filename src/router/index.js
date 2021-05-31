@@ -110,7 +110,7 @@ const routes = [
       {
         path: 'slotscope',
         name: 'slotscope',
-        component: () => import(/* webpackChunkName: "vmodal" */ '../views/slot-scope.vue'),
+        component: () => import(/* webpackChunkName: "vmodal" */ '../views/SlotScope/index.vue'),
         meta: {
           index: 1,
         },
