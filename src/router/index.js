@@ -123,6 +123,14 @@ const routes = [
           index: 1,
         },
       },
+      {
+        path: 'tree',
+        name: 'tree',
+        component: () => import(/* webpackChunkName: "vmodal" */ '../views/Tree/index.vue'),
+        meta: {
+          index: 1,
+        },
+      },
     ],
   },
 ];
