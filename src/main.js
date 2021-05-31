@@ -26,7 +26,6 @@ import './JS/FastClick'
 import filters from './JS/filter'
 import utils from './JS/utils'
 import VueScroller from 'vue-scroller'
-import { get, post } from './JS/ajax'
 
 // Vant按需引入
 // import { Grid, GridItem,Toast,Col, Row,Field,Button,Popup,Area } from 'vant';
