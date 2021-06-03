@@ -30,7 +30,7 @@ export default {
   name: "home",
   data () {
     return {
-      modules: ['drag', 'promise', 'about', 'vmodal', 'vcomp','ifrom','findcomp','checkbox','alert','table','slotscope','iscomp','tree'],
+      modules: ['drag', 'promise', 'about', 'vmodal', 'vcomp', 'ifrom', 'findcomp', 'checkbox', 'alert', 'table', 'slotscope', 'iscomp', 'tree','watermark'],
       active: 0,
       count: 0,
       isLoading: false,
@@ -57,10 +57,10 @@ export default {
         // 执行某些操作   
         console.log('res :>> ', res);
       })
-      // setTimeout(() => {
-      //   this.isLoading = false;
-      //   this.count++;
-      // }, 1000);
+      setTimeout(() => {
+        this.isLoading = false;
+        this.count++;
+      }, 1000);
     },
     itemClick (event) {
       console.log('event :>> ', event);
@@ -79,7 +79,7 @@ export default {
 .home {
   width: 100%;
   height: 100%;
-  background-color:white;
+  background-color: white;
   overflow: hidden;
   overflow-y: auto;
   display: flex;
@@ -92,7 +92,7 @@ export default {
 .van-nav-bar .van-nav-bar__content .van-nav-bar__title {
   color: #ecf0f1;
 }
-.home .van-pull-refresh{
+.home .van-pull-refresh {
   flex: 1;
 }
 .van-pull-refresh {

@@ -131,6 +131,14 @@ const routes = [
           index: 1,
         },
       },
+      {
+        path: 'watermark',
+        name: 'watermark',
+        component: () => import(/* webpackChunkName: "vmodal" */ '../views/Watermark/index.vue'),
+        meta: {
+          index: 1,
+        },
+      },
     ],
   },
 ];

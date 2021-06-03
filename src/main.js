@@ -13,9 +13,6 @@ import './assets/css/reset.css'
 import './assets/css/common.css'
 import './components/icon/index'
 
-// import Dialog from './components/dialog'
-// import Loading from './components/loading'
-// import toast from './components/toast'
 
 import Alert from '../src/components/alert/alert.js'
 
@@ -52,11 +49,6 @@ Vue.use(Directives)
 
 Vue.use(VueScroller)
 Vue.use(utils)
-
-// Vue.prototype.$dialog = Dialog
-// Vue.prototype.$loading = Loading
-// Vue.prototype.$toast = toast
-// Vue.prototype.$http = { get, post }
 
 // 全局axios封装
 import $api from './util/http'

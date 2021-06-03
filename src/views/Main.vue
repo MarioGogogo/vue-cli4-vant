@@ -4,7 +4,7 @@
     <keep-alive>
       <component :is="currentComponent"></component>
     </keep-alive>
-    <van-tabbar v-model="currentComponent" :fixed="false">
+    <van-tabbar v-model="currentComponent" fixed placeholder>
       <van-tabbar-item name="home" icon="home-o">首页</van-tabbar-item>
       <van-tabbar-item name="shopping" icon="shopping-cart-o" badge="99+">购物车</van-tabbar-item>
       <van-tabbar-item name="setting" icon="smile-o">设置</van-tabbar-item>

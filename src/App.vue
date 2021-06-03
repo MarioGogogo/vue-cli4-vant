@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import { removeWatermark, setWaterMark } from '../src/views/Watermark/watermark'
 export default {
   name: 'App',
   data: function () {
@@ -20,6 +21,12 @@ export default {
         'main'
       ]
     }
+  },
+  mounted () {
+    // setWaterMark('成龙', '杭州西软信息科技有限公司','2020-09-10');
+  },
+  destroyed () {
+    removeWatermark();
   },
   watch: {
     // 监听路由对象，决定使用哪种过渡效果
