@@ -10,7 +10,6 @@
   <div class="login">
     <van-row type="flex" justify="center" class="img">
       <van-col span="4"></van-col>
-      <van-col span="16"><img src="../assets/logo.png"/></van-col>
       <van-col span="4"></van-col>
     </van-row>
     <van-row type="flex" justify="center" class="line">

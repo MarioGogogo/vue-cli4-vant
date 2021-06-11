@@ -38,7 +38,7 @@
       <van-cell title="设置" is-link />
       <van-cell title="意见反馈" is-link />
     </van-cell-group>
-    <van-button type="primary" block>退出登录</van-button>
+    <van-button type="primary" block @click="handleLogin">登 录</van-button>
   </div>
 </template>
 
@@ -49,6 +49,13 @@ export default {
     return {
       checked: true,
     };
+  },
+  methods: {
+    handleLogin() {
+       this.$router.push({
+          path:'log'
+       })
+    }
   },
 }
 </script>

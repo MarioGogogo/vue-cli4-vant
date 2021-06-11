@@ -169,7 +169,7 @@ module.exports = {
     port: 8088, // 端口号
     https: false, // https:{type:Boolean}
     open: false, // 配置自动启动浏览器  open: 'Google Chrome'-默认启动谷歌
-
+    disableHostCheck: true, //解决内外穿透问题
     // 配置多个代理
     proxy: {
       '/api': {

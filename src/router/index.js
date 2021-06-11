@@ -14,8 +14,13 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/',
-    name: 'vmain',
+    name: 'main',
     component: () => import(/* webpackChunkName: "main" */ '../views/Main.vue'),
+  },
+  {
+    path: '/log',
+    name: 'log',
+    component: () => import(/* webpackChunkName: "log" */ '../views/Log.vue'),
   },
   {
     path: '/login',
@@ -135,6 +140,27 @@ const routes = [
         path: 'watermark',
         name: 'watermark',
         component: () => import(/* webpackChunkName: "vmodal" */ '../views/Watermark/index.vue'),
+        meta: {
+          index: 1,
+        },
+      },
+      {
+        path: 'wards',
+        name: 'wards',
+        component: () => import(/* webpackChunkName: "vmodal" */ '../views/Wards.vue'),
+        meta: {
+          index: 1,
+        },
+        children:[{
+           path:"/:id",
+           name: 'wardsDetail1',
+           component: () => import(/* webpackChunkName: "vmodal" */ '../views/WardsDetail.vue'),
+        }]
+      },
+      {
+        path: 'wardsDetail',
+        name: 'wardsDetail',
+        component: () => import(/* webpackChunkName: "vmodal" */ '../views/WardsDetail.vue'),
         meta: {
           index: 1,
         },

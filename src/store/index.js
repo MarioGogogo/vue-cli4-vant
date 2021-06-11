@@ -5,6 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    version:"1.0"
   },
   mutations: {
   },
@@ -13,3 +14,6 @@ export default new Vuex.Store({
   modules: {
   }
 })
+
+
+//todo:vuex  beforeEnter
