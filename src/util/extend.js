@@ -13,3 +13,4 @@ const AlertComponent = Vue.extend({
 
 // 创建 Profile 实例，并挂载到一个元素上。
 new AlertComponent().$mount('#root')
+
