@@ -14,7 +14,7 @@
         <van-grid-item
           v-for="value in modules"
           :key="value"
-          icon="photo-o"
+          :icon="randomIcons()"
           :text="value"
           dot
           @click="itemClick(value)"
@@ -30,26 +30,19 @@ export default {
   name: "home",
   data () {
     return {
-      modules: ['drag', 'promise', 'about', 'vmodal', 'vcomp', 'ifrom', 'findcomp', 'checkbox', 'alert', 'table', 'slotscope', 'iscomp', 'tree','watermark','wards'],
+      modules: ['drag', 'promise', 'about', 'vmodal', 'vcomp', 'ifrom', 'findcomp', 'checkbox', 'alert', 'table', 'slotscope', 'iscomp', 'tree', 'watermark', 'wards', 'forcUpdate'],
       active: 0,
       count: 0,
       isLoading: false,
       finished: false,
-      curHeight: 571, //当前所需屏幕高度
     };
   },
-  beforeCreate () {
-    this.curHeight = 571
-  },
-  //获取屏幕高度
-  beforeMount () {
-    if (this.curHeight) return
-    //   console.log("beforeMount", this.curHeight);
-    // var h = document.documentElement.clientHeight || document.body.clientHeight;
-    // this.curHeight = h - 46 -50; //减去页面上固定高度height
-    // console.log("beforeMount -curHeight :>> ", this.curHeight);
-  },
   methods: {
+    randomIcons () {
+      const icons = ['logistics', 'bulb-o', 'tv-o', 'hot-sale-o', 'photo-o', 'fire-o', 'shopping-cart-o', 'comment-o', 'gem-o', 'gift-o', 'point-gift-o', 'bag-o', 'gold-coin-o', 'play-circle-o']
+      const index = Math.floor(Math.random() * icons.length)
+      return icons[index]
+    },
     onRefresh () {
       this.$api.article.articleDetail('id', {
         api: 123

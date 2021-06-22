@@ -165,6 +165,15 @@ const routes = [
           index: 1,
         },
       },
+      {
+        path: 'forcUpdate',
+        name: 'forcUpdate',
+        component: () => import(/* webpackChunkName: "vmodal" */ '../views/forcUpdate.vue'),
+        meta: {
+          index: 1,
+        },
+      },
+      
     ],
   },
 ];

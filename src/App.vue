@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import { Col } from 'vant';
 import { removeWatermark, setWaterMark } from '../src/views/Watermark/watermark'
 export default {
   name: 'App',
@@ -33,9 +34,11 @@ export default {
     '$route' (to, from) {
       // 获取到携带的标记
       const routerType = to.query.routerType
+      if(routerType == undefined) return
       if (routerType === 'push') {
         // 当进入新页面的时候，保存新页面名称到虚拟任务栈
         this.virtualTaskStack.push(to.name)
+        console.log('%c 🥠 to.name: ', 'font-size:20px;background-color: #465975;color:#fff;', this.virtualTaskStack);
         
         // 跳转页面
         this.transitionName = 'fold-left'
