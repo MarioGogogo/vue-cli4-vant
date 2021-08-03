@@ -32,9 +32,11 @@ export default {
   watch: {
     // 监听路由对象，决定使用哪种过渡效果
     '$route' (to, from) {
+      console.log('%c 🦑 to, from: ', 'font-size:20px;background-color: #B03734;color:#fff;', to, from);
       // 获取到携带的标记
       const routerType = to.query.routerType
-      if(routerType == undefined) return
+      // 保证第一次加载的时候不需要动画效果  其他后退要有动画效果
+      if(routerType == undefined && from.name == null) return
       if (routerType === 'push') {
         // 当进入新页面的时候，保存新页面名称到虚拟任务栈
         this.virtualTaskStack.push(to.name)

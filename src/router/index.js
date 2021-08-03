@@ -173,7 +173,14 @@ const routes = [
           index: 1,
         },
       },
-      
+      {
+        path: 'animation',
+        name: 'animation',
+        component: () => import(/* webpackChunkName: "animation" */ '../views/Animation/animation.vue'),
+        meta: {
+          index: 1,
+        },
+      },
     ],
   },
 ];
