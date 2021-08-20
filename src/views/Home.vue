@@ -1,10 +1,10 @@
 <!--
  * @Author: your name
  * @Date: 2020-11-13 00:34:57
- * @LastEditTime: 2020-12-22 14:45:05
- * @LastEditors: Maroi
+ * @LastEditTime: 2021-08-20 11:24:06
+ * @LastEditors: MarioGo
  * @Description: In User Settings Edit
- * @FilePath: /example-demo/src/views/Home.vue
+ * @FilePath: /vue-cli4-vant/src/views/Home.vue
 -->
 <template>
   <div class="home">
@@ -30,7 +30,7 @@ export default {
   name: "home",
   data () {
     return {
-      modules: ['drag', 'promise', 'about', 'vmodal', 'vcomp', 'ifrom', 'findcomp', 'checkbox', 'alert', 'table', 'slotscope', 'iscomp', 'tree', 'watermark', 'wards', 'forcUpdate','animation'],
+      modules: ['drag', 'promise', 'about', 'vmodal', 'vcomp', 'ifrom', 'findcomp', 'checkbox', 'alert', 'table', 'slotscope', 'iscomp', 'tree', 'watermark', 'wards', 'forcUpdate', 'animation',"timeline"],
       active: 0,
       count: 0,
       isLoading: false,

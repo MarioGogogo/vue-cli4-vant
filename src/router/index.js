@@ -1,10 +1,10 @@
 /*
  * @Author: your name
  * @Date: 2020-11-13 21:43:50
- * @LastEditTime: 2020-12-22 14:53:36
- * @LastEditors: Maroi
+ * @LastEditTime: 2021-08-20 11:25:04
+ * @LastEditors: MarioGo
  * @Description: In User Settings Edit
- * @FilePath: /example-demo/src/router/index.js
+ * @FilePath: /vue-cli4-vant/src/router/index.js
  */
 import Vue from 'vue';
 import VueRouter from 'vue-router';
@@ -177,6 +177,14 @@ const routes = [
         path: 'animation',
         name: 'animation',
         component: () => import(/* webpackChunkName: "animation" */ '../views/Animation/animation.vue'),
+        meta: {
+          index: 1,
+        },
+      },
+      {
+        path: 'timeline',
+        name: 'timeline',
+        component: () => import(/* webpackChunkName: "animation" */ '../views/TimeLine/timeline.vue'),
         meta: {
           index: 1,
         },
