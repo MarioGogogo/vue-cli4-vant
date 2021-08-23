@@ -1,3 +1,12 @@
+<!--
+ * @Author: MarioGo
+ * @Date: 2021-05-31 10:24:06
+ * @LastEditTime: 2021-08-23 13:43:59
+ * @LastEditors: MarioGo
+ * @Description: 插槽demo
+ * @FilePath: /vue-cli4-vant/src/views/SlotScope/index.vue
+ * 可以输入预定的版权声明、个性签名、空行等
+-->
 <template>
   <div>
     <h5>普通插槽</h5>
@@ -6,8 +15,8 @@
     <book-list :books="books">
       <template slot-scope="{ book }">
         <!-- 可以定制的样式的 -->
-        <span :class="'book-title-'+book.sale" v-if="book.sale === '0'">限</span>
-        <span :class="'book-title-'+book.sale" v-else-if="book.sale === '1'">免</span>
+        <span :class="'book-title-' + book.sale" v-if="book.sale === '0'">限</span>
+        <span :class="'book-title-' + book.sale" v-else-if="book.sale === '1'">免</span>
         {{ book.name }}
       </template>
     </book-list>
@@ -30,10 +39,10 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.book-title-0{
-   background-color: red;
+.book-title-0 {
+  background-color: red;
 }
-.book-title-1{
-   background-color: lawngreen;
+.book-title-1 {
+  background-color: lawngreen;
 }
 </style>

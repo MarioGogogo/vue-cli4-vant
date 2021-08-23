@@ -1,7 +1,7 @@
 <!--
  * @Author: MarioGo
  * @Date: 2021-08-20 11:25:19
- * @LastEditTime: 2021-08-20 13:28:18
+ * @LastEditTime: 2021-08-23 10:18:07
  * @LastEditors: MarioGo
  * @Description: 时间线组件
  * @FilePath: /vue-cli4-vant/src/views/TimeLine/timeline.vue
@@ -63,11 +63,12 @@ export default {
       height: 16px;
       border-radius: 50%;
       margin-top: 10px;
-      box-shadow: 0 0 0 5px #ddeefe;
+      // box-shadow: 0 0 0 5px #ddeefe;
       &.tcic-picture {
         background: #60b3fc;
         margin-left: 18px;
         margin-top: 15px;
+        animation: wave 2s linear infinite;
       }
       &.tcic-movie {
         background: #60b2fb;
@@ -112,6 +113,15 @@ export default {
       left: 25.5px;
       bottom: -28px;
     }
+  }
+}
+
+@keyframes wave {
+  0%,100% {
+    box-shadow: 0 0 0 0 #ddeefe, 0 0 0 0 #ddeefe;
+  }
+  50% {
+    box-shadow: 0 0 0 5px #ddeefe, 0 0 0 5px #ddeefe;
   }
 }
 </style>

@@ -1,10 +1,13 @@
 /*
- * @Descripttion:
- * @Author: Mario
- * @Date: 2020-12-15 10:53:17
- * @LastEditors: Maroi
- * @LastEditTime: 2020-12-22 15:10:35
+ * @Author: MarioGo
+ * @Date: 2021-05-31 10:14:36
+ * @LastEditTime: 2021-08-23 14:00:13
+ * @LastEditors: MarioGo
+ * @Description: 入口文件
+ * @FilePath: /vue-cli4-vant/src/main.js
+ * 可以输入预定的版权声明、个性签名、空行等
  */
+
 import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
@@ -15,6 +18,7 @@ import './components/icon/index';
 
 import Alert from '../src/components/alert/alert.js';
 
+Vue.config.devtools = true
 Vue.prototype.$Alert = Alert;
 
 import './JS/plugin';
