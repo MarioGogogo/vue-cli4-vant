@@ -1,7 +1,7 @@
 <!--
  * @Author: MarioGo
  * @Date: 2021-08-20 15:08:33
- * @LastEditTime: 2021-08-23 15:16:33
+ * @LastEditTime: 2021-08-23 16:21:13
  * @LastEditors: MarioGo
  * @Description: svg进度条滚动列表
  * @FilePath: /vue-cli4-vant/src/views/SvgCircle/svgcircle.vue
@@ -108,6 +108,10 @@ export default {
   },
   methods: {
     startMove () {
+      debugger
+      if(this.number === 0 ){
+        console.log('object :>> ');
+      }
       // eslint-disable-next-line
       let timer = setTimeout(() => {
         if (this.number === 2) {
