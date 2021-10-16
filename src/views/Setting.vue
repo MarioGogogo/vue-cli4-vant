@@ -5,14 +5,6 @@
  * @LastEditors: Maroi
  * @LastEditTime: 2020-12-22 14:55:46
 -->
-<!--
- * @Author: your name
- * @Date: 2020-11-27 21:18:24
- * @LastEditTime: 2020-11-28 16:02:48
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: /example-demo/src/views/Setting.vue
--->
 <template>
   <div class="set">
     <van-nav-bar title="设置" />

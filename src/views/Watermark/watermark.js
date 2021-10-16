@@ -1,6 +1,13 @@
-/**  水印添加方法  */
-
-let setWatermark = (str1, str2,str3) => {
+/*
+ * @Author: MarioGo
+ * @Date: 2021-06-03 10:09:56
+ * @LastEditTime: 2021-09-26 15:17:35
+ * @LastEditors: MarioGo
+ * @Description: 水印添加方法
+ * @FilePath: /vue-cli4-vant/src/views/Watermark/watermark.js
+ * 可以输入预定的版权声明、个性签名、空行等
+ */
+let setWatermark = (str1,str2,str3,str4) => {
   let id = '1.23452384164.123412415';
 
   if (document.getElementById(id) !== null) {
@@ -19,9 +26,10 @@ let setWatermark = (str1, str2,str3) => {
   cans.textAlign = 'left';
   cans.textBaseline = 'Middle';
   cans.fillText(str1, 10, 100)
+  cans.fillText(str2, 20, 60)
   // cans.fillText(str1, can.width / 2, can.height); // 水印在画布的位置x，y轴
-  cans.fillText(str2, can.width / 4, can.height + 22);
-  cans.fillText(str3, 110, 80)
+  cans.fillText(str3, can.width / 4, can.height + 22);
+  cans.fillText(str4, 110, 80)
 
   let div = document.createElement('div');
   div.id = id;
@@ -39,10 +47,10 @@ let setWatermark = (str1, str2,str3) => {
 };
 
 // 添加水印方法
-export const setWaterMark = (str1, str2,str3) => {
-  let id = setWatermark(str1, str2,str3);
+export const setWaterMark = (str1,str2,str3,str4) => {
+  let id = setWatermark(str1,str2,str3,str4);
   if (document.getElementById(id) === null) {
-    id = setWatermark(str1, str2,str3);
+    id = setWatermark(str1,str2,str3,str4);
   }
 };
 
