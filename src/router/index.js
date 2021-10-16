@@ -137,6 +137,14 @@ const routes = [
         },
       },
       {
+        path: 'basetree',
+        name: 'basetree',
+        component: () => import(/* webpackChunkName: "vmodal" */ '../views/BaseTree/index.vue'),
+        meta: {
+          index: 1,
+        },
+      },
+      {
         path: 'watermark',
         name: 'watermark',
         component: () => import(/* webpackChunkName: "vmodal" */ '../views/Watermark/index.vue'),
@@ -173,7 +181,7 @@ const routes = [
           index: 1,
         },
       },
-      
+
     ],
   },
 ];
