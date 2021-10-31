@@ -1,7 +1,7 @@
 /*
  * @Author: MarioGo
  * @Date: 2021-05-31 10:14:36
- * @LastEditTime: 2021-08-23 14:00:13
+ * @LastEditTime: 2021-10-29 23:37:02
  * @LastEditors: MarioGo
  * @Description: 入口文件
  * @FilePath: /vue-cli4-vant/src/main.js
@@ -25,33 +25,47 @@ import './JS/plugin';
 import './JS/FastClick';
 import filters from './JS/filter';
 import utils from './JS/utils';
-import VueScroller from 'vue-scroller';
+
+Vue.use(utils);
 
 // Vant按需引入
-// import { Grid, GridItem,Toast,Col, Row,Field,Button,Popup,Area } from 'vant';
-// Vue.use(Grid);
-// Vue.use(GridItem);
-// Vue.use(Toast);
-// Vue.use(Col);
-// Vue.use(Row);
-// Vue.use(Field);
-// Vue.use(Button);
-// Vue.use(Popup);
-// Vue.use(Area);
+import { Grid, GridItem,Tabbar,NavBar, TabbarItem ,Toast,Col, Row,Field,Button,Popup,Area,PullRefresh,Skeleton,Card,Collapse, CollapseItem,Tab, Tabs,Divider,SwipeCell,Cell, CellGroup,Icon,Switch } from 'vant';
+import 'vant/lib/index.css';
+Vue.use(Grid);
+Vue.use(GridItem);
+Vue.use(Toast);
+Vue.use(Col);
+Vue.use(Row);
+Vue.use(Field);
+Vue.use(Button);
+Vue.use(Popup);
+Vue.use(Area);
+Vue.use(Tabbar);
+Vue.use(TabbarItem);
+Vue.use(NavBar);
+Vue.use(PullRefresh);
+Vue.use(Skeleton);
+Vue.use(Card);
+Vue.use(Collapse);
+Vue.use(CollapseItem);
+Vue.use(Tab);
+Vue.use(Tabs);
+Vue.use(Divider);
+Vue.use(SwipeCell);
+Vue.use(Cell);
+Vue.use(CellGroup);
+Vue.use(Icon);
+Vue.use(Switch);
 
 import VueDND from 'awe-dnd';
 // 导入拖拽组件
 Vue.use(VueDND);
 
-import Vant from 'vant';
-import 'vant/lib/index.css';
-Vue.use(Vant);
 //全局注册指令
 import Directives from './util/directives';
 Vue.use(Directives);
 
-Vue.use(VueScroller);
-Vue.use(utils);
+
 
 // 全局axios封装
 import $api from './util/http';
@@ -62,7 +76,7 @@ Object.keys(filters).forEach((item) => {
   Vue.filter(item, filters[item]);
 });
 
-Vue.config.productionTip = false;
+
 
 /*
  在路由首页进行判断。当to.meta.auth为true(需要登录)，且不存在登录信息缓存时，需要重定向去登录页面
@@ -76,6 +90,7 @@ Vue.config.productionTip = false;
 //     next()
 //   }
 // })
+Vue.config.productionTip = false;
 
 export default new Vue({
   el: '#app',

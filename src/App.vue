@@ -10,7 +10,6 @@
 </template>
 
 <script>
-import { Col } from 'vant';
 import { removeWatermark, setWaterMark } from '../src/views/Watermark/watermark'
 export default {
   name: 'App',
