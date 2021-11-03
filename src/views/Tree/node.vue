@@ -62,9 +62,9 @@ export default {
        this.updateTreeDown(this.data,checked)
     },
     updateTreeDown(data,checked){
-      console.log('%c 🥖 data: ', 'font-size:20px;background-color: #F5CE50;color:#fff;', data);
+      console.log('%c 🥖 data: ', 'font-size:20px;background-color: #F5CE50;color:#fff;',checked, data);
         this.$set(data,'checked',checked)
-       
+
         if(data.children && data.children.length){
            data.children.forEach(item => {
               this.updateTreeDown(item,checked)

@@ -8841,13 +8841,6 @@ vue-router@^3.1.6:
   resolved "https://registry.npm.taobao.org/vue-router/download/vue-router-3.4.9.tgz?cache=0&sync_timestamp=1607347326065&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-router%2Fdownload%2Fvue-router-3.4.9.tgz#c016f42030ae2932f14e4748b39a1d9a0e250e66"
   integrity sha1-wBb0IDCuKTLxTkdIs5odmg4lDmY=
 
-vue-scroller@^2.2.4:
-  version "2.2.4"
-  resolved "https://registry.npm.taobao.org/vue-scroller/download/vue-scroller-2.2.4.tgz#c28a50f2e5ecd7ad60e43ce4eb8f38886ff7b1cf"
-  integrity sha1-wopQ8uXs161g5Dzk6484iG/3sc8=
-  dependencies:
-    vue "^2.2.6"
-
 vue-server-renderer@^2.3.4:
   version "2.6.12"
   resolved "https://registry.npm.taobao.org/vue-server-renderer/download/vue-server-renderer-2.6.12.tgz?cache=0&sync_timestamp=1597929844730&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-server-renderer%2Fdownload%2Fvue-server-renderer-2.6.12.tgz#a8cb9c49439ef205293cb41c35d0d2b0541653a5"
@@ -8894,7 +8887,7 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.npm.taobao.org/vue-template-es2015-compiler/download/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha1-HuO8mhbsv1EYvjNLsV+cRvgvWCU=
 
-vue@^2.2.6, vue@^2.6.12:
+vue@^2.6.12:
   version "2.6.12"
   resolved "https://registry.npm.taobao.org/vue/download/vue-2.6.12.tgz?cache=0&sync_timestamp=1606948640309&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue%2Fdownload%2Fvue-2.6.12.tgz#f5ebd4fa6bd2869403e29a896aed4904456c9123"
   integrity sha1-9evU+mvShpQD4pqJau1JBEVskSM=

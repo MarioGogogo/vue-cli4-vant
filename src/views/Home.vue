@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-11-13 00:34:57
- * @LastEditTime: 2021-11-03 09:22:39
+ * @LastEditTime: 2021-11-03 11:17:12
  * @LastEditors: MarioGo
  * @Description: In User Settings Edit
  * @FilePath: /vue-cli4-vant/src/views/Home.vue
@@ -11,14 +11,16 @@
     <van-nav-bar title="首页" :safe-area-inset-top="true"/>
     <van-pull-refresh v-model="isLoading" success-text="刷新成功" @refresh="onRefresh">
       <van-grid :column-num="3">
-        <van-grid-item
-          v-for="value in modules"
-          :key="value"
-          :icon="randomIcons()"
-          :text="value"
-          dot
-          @click="itemClick(value)"
-        />
+        <template>
+          <van-grid-item
+            v-for="value in modules"
+            :key="value"
+            :icon="randomIcons()"
+            :text="value"
+            dot
+            @click="itemClick(value)"
+          />
+        </template>
       </van-grid>
       <p>刷新次数: {{ count }}</p>
     </van-pull-refresh>
@@ -30,12 +32,17 @@ export default {
   name: "home",
   data() {
     return {
-      modules: ['drag', 'promise', 'about', 'vmodal', 'vcomp', 'ifrom', 'findcomp', 'checkbox', 'alert', 'table', 'slotscope', 'iscomp', 'tree', 'watermark', 'wards', 'forcUpdate', 'animation', "timeline", "svgcircle","canvas"],
+      modules: ['drag', 'promise', 'about', 'vmodal', 'vcomp', 'ifrom', 'findcomp', 'checkbox', 'alert', 'table', 'slotscope', 'iscomp', 'tree', 'watermark', 'wards', 'forcUpdate', 'animation', "timeline", "svgcircle","canvas","basetree"],
       active: 0,
       count: 0,
       isLoading: false,
       finished: false,
     };
+  },
+  mounted () {
+    setTimeout(() => {
+      this.loading = false;
+    }, 2000)
   },
   methods: {
     randomIcons() {

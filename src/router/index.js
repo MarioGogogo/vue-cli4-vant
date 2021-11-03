@@ -1,13 +1,14 @@
 /*
  * @Author: your name
  * @Date: 2020-11-13 21:43:50
- * @LastEditTime: 2021-11-03 09:30:04
+ * @LastEditTime: 2021-11-03 11:16:44
  * @LastEditors: MarioGo
  * @Description: In User Settings Edit
  * @FilePath: /vue-cli4-vant/src/router/index.js
  */
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import Main from "views/Main.vue";
 
 Vue.use(VueRouter);
 
@@ -15,7 +16,7 @@ const routes = [
   {
     path: '/',
     name: 'main',
-    component: () => import(/* webpackChunkName: "main" */ '../views/Main.vue'),
+    component: Main,
   },
   {
     path: '/log',
@@ -67,7 +68,7 @@ const routes = [
       {
         path: 'vcomp',
         name: 'vcomp',
-        component: () => import(/* webpackChunkName: "vmodal" */ '../views/VComp/VComp.vue'),
+        component: () => import(/* webpackChunkName: "vcomp" */ '../views/VComp/VComp.vue'),
         meta: {
           index: 1,
         },
@@ -75,7 +76,7 @@ const routes = [
       {
         path: 'from',
         name: 'from',
-        component: () => import(/* webpackChunkName: "vmodal" */ '../views/Form/index.vue'),
+        component: () => import(/* webpackChunkName: "from" */ '../views/Form/index.vue'),
         meta: {
           index: 1,
         },
@@ -83,7 +84,7 @@ const routes = [
       {
         path: 'findcomp',
         name: 'componentA',
-        component: () => import(/* webpackChunkName: "vmodal" */ '../views/FindComp/FindComp.vue'),
+        component: () => import(/* webpackChunkName: "findcomp" */ '../views/FindComp/FindComp.vue'),
         meta: {
           index: 1,
         },
@@ -91,7 +92,7 @@ const routes = [
       {
         path: 'checkbox',
         name: 'checkbox',
-        component: () => import(/* webpackChunkName: "vmodal" */ '../views/CheckBox/index.vue'),
+        component: () => import(/* webpackChunkName: "checkbox" */ '../views/CheckBox/index.vue'),
         meta: {
           index: 1,
         },
@@ -99,7 +100,7 @@ const routes = [
       {
         path: 'alert',
         name: 'alert',
-        component: () => import(/* webpackChunkName: "vmodal" */ '../views/Alert.vue'),
+        component: () => import(/* webpackChunkName: "alert" */ '../views/Alert.vue'),
         meta: {
           index: 1,
         },
@@ -115,7 +116,7 @@ const routes = [
       {
         path: 'slotscope',
         name: 'slotscope',
-        component: () => import(/* webpackChunkName: "vmodal" */ '../views/SlotScope/index.vue'),
+        component: () => import(/* webpackChunkName: "slotscope" */ '../views/SlotScope/index.vue'),
         meta: {
           index: 1,
         },
@@ -123,7 +124,7 @@ const routes = [
       {
         path: 'iscomp',
         name: 'iscomp',
-        component: () => import(/* webpackChunkName: "vmodal" */ '../views/isComp/isComp.vue'),
+        component: () => import(/* webpackChunkName: "iscomp" */ '../views/isComp/isComp.vue'),
         meta: {
           index: 1,
         },
@@ -131,7 +132,15 @@ const routes = [
       {
         path: 'tree',
         name: 'tree',
-        component: () => import(/* webpackChunkName: "vmodal" */ '../views/Tree/index.vue'),
+        component: () => import(/* webpackChunkName: "tree" */ '../views/Tree/index.vue'),
+        meta: {
+          index: 1,
+        },
+      },
+      {
+        path: 'basetree',
+        name: 'basetree',
+        component: () => import(/* webpackChunkName: "basetree" */ '../views/BaseTree/index.vue'),
         meta: {
           index: 1,
         },
@@ -139,7 +148,7 @@ const routes = [
       {
         path: 'watermark',
         name: 'watermark',
-        component: () => import(/* webpackChunkName: "vmodal" */ '../views/Watermark/index.vue'),
+        component: () => import(/* webpackChunkName: "watermark" */ '../views/Watermark/index.vue'),
         meta: {
           index: 1,
         },
@@ -147,20 +156,22 @@ const routes = [
       {
         path: 'wards',
         name: 'wards',
-        component: () => import(/* webpackChunkName: "vmodal" */ '../views/Wards.vue'),
+        component: () => import(/* webpackChunkName: "wards" */ '../views/Wards.vue'),
         meta: {
           index: 1,
         },
-        children:[{
-           path:"/:id",
-           name: 'wardsDetail1',
-           component: () => import(/* webpackChunkName: "vmodal" */ '../views/WardsDetail.vue'),
-        }]
+        children: [
+          {
+            path: '/:id',
+            name: 'wardsDetail1',
+            component: () => import(/* webpackChunkName: "wardsDetail1" */ '../views/WardsDetail.vue'),
+          },
+        ],
       },
       {
         path: 'wardsDetail',
         name: 'wardsDetail',
-        component: () => import(/* webpackChunkName: "vmodal" */ '../views/WardsDetail.vue'),
+        component: () => import(/* webpackChunkName: "wardsDetail" */ '../views/WardsDetail.vue'),
         meta: {
           index: 1,
         },
@@ -168,7 +179,7 @@ const routes = [
       {
         path: 'forcUpdate',
         name: 'forcUpdate',
-        component: () => import(/* webpackChunkName: "vmodal" */ '../views/forcUpdate.vue'),
+        component: () => import(/* webpackChunkName: "forcUpdate" */ '../views/forcUpdate.vue'),
         meta: {
           index: 1,
         },
@@ -210,7 +221,7 @@ const routes = [
 ];
 
 const router = new VueRouter({
-  // mode: 'history',
+  mode: 'hash',
   base: process.env.BASE_URL,
   routes,
 });

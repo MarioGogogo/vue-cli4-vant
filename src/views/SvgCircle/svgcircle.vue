@@ -108,7 +108,6 @@ export default {
   },
   methods: {
     startMove () {
-      debugger
       if(this.number === 0 ){
         console.log('object :>> ');
       }
