@@ -1,14 +1,14 @@
 <!--
  * @Author: your name
  * @Date: 2020-11-13 00:34:57
- * @LastEditTime: 2021-08-20 15:13:17
+ * @LastEditTime: 2021-11-03 09:22:39
  * @LastEditors: MarioGo
  * @Description: In User Settings Edit
  * @FilePath: /vue-cli4-vant/src/views/Home.vue
 -->
 <template>
   <div class="home">
-    <van-nav-bar title="首页" :safe-area-inset-top="true" />
+    <van-nav-bar title="首页" :safe-area-inset-top="true"/>
     <van-pull-refresh v-model="isLoading" success-text="刷新成功" @refresh="onRefresh">
       <van-grid :column-num="3">
         <van-grid-item
@@ -28,9 +28,9 @@
 <script>
 export default {
   name: "home",
-  data () {
+  data() {
     return {
-      modules: ['drag', 'promise', 'about', 'vmodal', 'vcomp', 'ifrom', 'findcomp', 'checkbox', 'alert', 'table', 'slotscope', 'iscomp', 'tree', 'watermark', 'wards', 'forcUpdate', 'animation',"timeline","svgcircle"],
+      modules: ['drag', 'promise', 'about', 'vmodal', 'vcomp', 'ifrom', 'findcomp', 'checkbox', 'alert', 'table', 'slotscope', 'iscomp', 'tree', 'watermark', 'wards', 'forcUpdate', 'animation', "timeline", "svgcircle","canvas"],
       active: 0,
       count: 0,
       isLoading: false,
@@ -38,16 +38,16 @@ export default {
     };
   },
   methods: {
-    randomIcons () {
+    randomIcons() {
       const icons = ['logistics', 'bulb-o', 'tv-o', 'hot-sale-o', 'photo-o', 'fire-o', 'shopping-cart-o', 'comment-o', 'gem-o', 'gift-o', 'point-gift-o', 'bag-o', 'gold-coin-o', 'play-circle-o']
       const index = Math.floor(Math.random() * icons.length)
       return icons[index]
     },
-    onRefresh () {
+    onRefresh() {
       this.$api.article.articleDetail('id', {
         api: 123
       }).then(res => {
-        // 执行某些操作   
+        // 执行某些操作
         console.log('res :>> ', res);
       })
       setTimeout(() => {
@@ -55,7 +55,7 @@ export default {
         this.count++;
       }, 1000);
     },
-    itemClick (event) {
+    itemClick(event) {
       console.log('event :>> ', event);
       this.$router.push({
         path: `/v1.0/${event}`,
@@ -78,16 +78,20 @@ export default {
   display: flex;
   flex-direction: column;
 }
+
 .home .van-nav-bar {
   height: 50px;
   background: #3498db;
 }
+
 .van-nav-bar .van-nav-bar__content .van-nav-bar__title {
   color: #ecf0f1;
 }
+
 .home .van-pull-refresh {
   flex: 1;
 }
+
 .van-pull-refresh {
   height: 100%;
 }

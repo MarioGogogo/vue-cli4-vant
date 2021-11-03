@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-11-13 21:43:50
- * @LastEditTime: 2021-08-20 15:13:13
+ * @LastEditTime: 2021-11-03 09:30:04
  * @LastEditors: MarioGo
  * @Description: In User Settings Edit
  * @FilePath: /vue-cli4-vant/src/router/index.js
@@ -193,6 +193,14 @@ const routes = [
         path: 'svgcircle',
         name: 'svgcircle',
         component: () => import(/* webpackChunkName: "svgcircle" */ '../views/SvgCircle/svgcircle.vue'),
+        meta: {
+          index: 1,
+        },
+      },
+      {
+        path: 'canvas',
+        name: 'canvas',
+        component: () => import(/* webpackChunkName: "canvas" */ '../views/Canvas/index.vue'),
         meta: {
           index: 1,
         },

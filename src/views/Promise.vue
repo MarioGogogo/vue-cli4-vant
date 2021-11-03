@@ -1,18 +1,10 @@
 <!--
-<<<<<<< HEAD
  * @Author: your name
  * @Date: 2020-11-25 23:16:59
- * @LastEditTime: 2020-11-29 14:22:36
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-11-03 09:27:51
+ * @LastEditors: MarioGo
  * @Description: In User Settings Edit
- * @FilePath: /example-demo/src/views/Promise.vue
-=======
- * @Descripttion: 
- * @Author: Mario
- * @Date: 2020-12-22 14:55:27
- * @LastEditors: Maroi
- * @LastEditTime: 2020-12-22 15:08:51
->>>>>>> c9f8d1f3ba4e96719060556a5adc7d2047138f51
+ * @FilePath: /vue-cli4-vant/src/views/Promise.vue
 -->
 <template>
   <div class="promise">
