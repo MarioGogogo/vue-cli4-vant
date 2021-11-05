@@ -40,7 +40,7 @@ export default {
         // 当进入新页面的时候，保存新页面名称到虚拟任务栈
         this.virtualTaskStack.push(to.name)
         console.log('%c 🥠 to.name: ', 'font-size:20px;background-color: #465975;color:#fff;', this.virtualTaskStack);
-        
+
         // 跳转页面
         this.transitionName = 'fold-left'
       } else {
