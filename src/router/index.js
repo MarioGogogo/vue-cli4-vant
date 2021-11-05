@@ -208,6 +208,14 @@ const routes = [
           index: 1,
         },
       },
+      {
+        path: 'longList',
+        name: 'longList',
+        component: () => import(/* webpackChunkName: "svgcircle" */ '../views/SvgCircle/svgcircle.vue'),
+        meta: {
+          index: 1,
+        },
+      },
     ],
   },
 ];

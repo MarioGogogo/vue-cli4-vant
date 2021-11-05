@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-11-13 00:34:57
- * @LastEditTime: 2021-10-31 21:57:40
+ * @LastEditTime: 2021-11-05 20:35:10
  * @LastEditors: MarioGo
  * @Description: In User Settings Edit
  * @FilePath: /vue-cli4-vant/src/views/Home.vue
@@ -33,7 +33,7 @@ export default {
   data () {
     return {
       loading: true,
-      modules: ['drag', 'promise', 'about', 'vmodal', 'vcomp', 'ifrom', 'findcomp', 'checkbox', 'alert', 'table', 'slotscope', 'iscomp', 'tree', 'watermark', 'wards', 'forcUpdate', 'animation', "timeline", "svgcircle", "basetree"],
+      modules: ['drag', 'promise', 'about', 'vmodal', 'vcomp', 'ifrom', 'findcomp', 'checkbox', 'alert', 'table', 'slotscope', 'iscomp', 'tree', 'watermark', 'wards', 'forcUpdate', 'animation', "timeline", "svgcircle", "basetree","longList"],
       active: 0,
       count: 0,
       isLoading: false,

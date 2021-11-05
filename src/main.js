@@ -1,7 +1,7 @@
 /*
  * @Author: MarioGo
  * @Date: 2021-05-31 10:14:36
- * @LastEditTime: 2021-10-29 23:37:02
+ * @LastEditTime: 2021-11-05 20:36:40
  * @LastEditors: MarioGo
  * @Description: 入口文件
  * @FilePath: /vue-cli4-vant/src/main.js
@@ -19,6 +19,7 @@ import './components/icon/index';
 import Alert from '../src/components/alert/alert.js';
 
 Vue.config.devtools = true
+
 Vue.prototype.$Alert = Alert;
 
 import './JS/plugin';

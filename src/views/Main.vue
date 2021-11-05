@@ -1,7 +1,7 @@
 <!--
  * @Author: MarioGo
  * @Date: 2021-06-10 20:10:19
- * @LastEditTime: 2021-10-31 22:05:00
+ * @LastEditTime: 2021-11-05 20:35:24
  * @LastEditors: MarioGo
  * @Description: 文件描述
  * @FilePath: /vue-cli4-vant/src/views/Main.vue
