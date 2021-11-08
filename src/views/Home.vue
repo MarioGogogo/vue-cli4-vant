@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-11-13 00:34:57
- * @LastEditTime: 2021-11-03 11:17:12
+ * @LastEditTime: 2021-11-05 21:19:28
  * @LastEditors: MarioGo
  * @Description: In User Settings Edit
  * @FilePath: /vue-cli4-vant/src/views/Home.vue
@@ -32,7 +32,7 @@ export default {
   name: "home",
   data() {
     return {
-      modules: ['drag', 'promise', 'about', 'vmodal', 'vcomp', 'ifrom', 'findcomp', 'checkbox', 'alert', 'table', 'slotscope', 'iscomp', 'tree', 'watermark', 'wards', 'forcUpdate', 'animation', "timeline", "svgcircle","canvas","basetree"],
+      modules: ['drag', 'promise', 'about', 'vmodal', 'vcomp', 'ifrom', 'findcomp', 'checkbox', 'alert', 'table', 'slotscope', 'iscomp', 'tree', 'watermark', 'wards', 'forcUpdate', 'animation', "timeline", "svgcircle","canvas","basetree","longList"],
       active: 0,
       count: 0,
       isLoading: false,

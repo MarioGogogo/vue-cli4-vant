@@ -23,6 +23,12 @@ export default {
     }
   },
   mounted () {
+    this.$nextTick(() => {
+      // 初始化uni.webview
+      document.addEventListener("UniAppJSBridgeReady", function () {
+        console.log("初始化uniapp的API成功");
+      });
+    });
     // setWaterMark('成龙', '杭州西软信息科技有限公司','2020-09-10');
   },
   destroyed () {
@@ -35,7 +41,7 @@ export default {
       // 获取到携带的标记
       const routerType = to.query.routerType
       // 保证第一次加载的时候不需要动画效果  其他后退要有动画效果
-      if(routerType == undefined && from.name == null) return
+      if (routerType == undefined && from.name == null) return
       if (routerType === 'push') {
         // 当进入新页面的时候，保存新页面名称到虚拟任务栈
         this.virtualTaskStack.push(to.name)

@@ -1,7 +1,7 @@
 <!--
  * @Author: MarioGo
  * @Date: 2021-10-27 23:03:26
- * @LastEditTime: 2021-10-29 23:29:14
+ * @LastEditTime: 2021-11-05 21:57:55
  * @LastEditors: MarioGo
  * @Description: 文件描述
  * @FilePath: /vue-cli4-vant/public/index.html
@@ -28,6 +28,8 @@
       src="<%= htmlWebpackPlugin.options.cdn.js[i] %>"
     ></script>
     <% } %>
+     <!-- uni 的 SDK -->
+     <script type="text/javascript" src="https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.2.js"></script>
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
