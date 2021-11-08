@@ -1,14 +1,14 @@
 <!--
  * @Author: your name
  * @Date: 2020-11-27 23:05:26
- * @LastEditTime: 2020-11-28 16:44:32
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-11-08 14:32:00
+ * @LastEditors: MarioGo
  * @Description: In User Settings Edit
- * @FilePath: /example-demo/src/views/Child.vue
+ * @FilePath: /vue-cli4-vant/src/views/Child.vue
 -->
 <template>
   <div class="child">
-    <van-nav-bar title="子页面" left-arrow :safe-area-inset-top="true" @click-left="onClickLeft" />
+    <van-nav-bar title="子页面" left-arrow :safe-area-inset-top="true" @click-left="onClickLeft"  fixed placeholder />
     <router-view class="view"></router-view>
   </div>
 </template>
