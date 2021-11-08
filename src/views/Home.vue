@@ -1,14 +1,14 @@
 <!--
  * @Author: your name
  * @Date: 2020-11-13 00:34:57
- * @LastEditTime: 2021-11-05 21:19:28
+ * @LastEditTime: 2021-11-08 14:32:36
  * @LastEditors: MarioGo
  * @Description: In User Settings Edit
  * @FilePath: /vue-cli4-vant/src/views/Home.vue
 -->
 <template>
   <div class="home">
-    <van-nav-bar title="首页" :safe-area-inset-top="true"/>
+    <van-nav-bar title="首页" :safe-area-inset-top="true" />
     <van-pull-refresh v-model="isLoading" success-text="刷新成功" @refresh="onRefresh">
       <van-grid :column-num="3">
         <template>
@@ -32,7 +32,7 @@ export default {
   name: "home",
   data() {
     return {
-      modules: ['drag', 'promise', 'about', 'vmodal', 'vcomp', 'ifrom', 'findcomp', 'checkbox', 'alert', 'table', 'slotscope', 'iscomp', 'tree', 'watermark', 'wards', 'forcUpdate', 'animation', "timeline", "svgcircle","canvas","basetree","longList"],
+      modules: ['longlist','drag', 'promise', 'about', 'vmodal', 'vcomp', 'ifrom', 'findcomp', 'checkbox', 'alert', 'table', 'slotscope', 'iscomp', 'tree', 'watermark', 'wards', 'forcUpdate', 'animation', "timeline", "svgcircle","canvas","basetree"],
       active: 0,
       count: 0,
       isLoading: false,
