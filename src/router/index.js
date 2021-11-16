@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-11-13 21:43:50
- * @LastEditTime: 2021-11-08 13:32:36
+ * @LastEditTime: 2021-11-09 16:14:24
  * @LastEditors: MarioGo
  * @Description: In User Settings Edit
  * @FilePath: /vue-cli4-vant/src/router/index.js
@@ -219,7 +219,15 @@ const routes = [
       {
         path: 'longlist',
         name: 'longList',
-        component: () => import(/* webpackChunkName: "canvas" */ '../views/LongList/index.vue'),
+        component: () => import(/* webpackChunkName: "longList" */ '../views/LongList/index.vue'),
+        meta: {
+          index: 1,
+        },
+      },
+      {
+        path: 'easylonglist',
+        name: 'easylongList',
+        component: () => import(/* webpackChunkName: "easylongList" */ '../views/EasyLongList/index.vue'),
         meta: {
           index: 1,
         },
