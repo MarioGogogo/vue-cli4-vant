@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-11-13 00:34:57
- * @LastEditTime: 2021-11-09 16:16:11
+ * @LastEditTime: 2021-11-22 17:33:38
  * @LastEditors: MarioGo
  * @Description: In User Settings Edit
  * @FilePath: /vue-cli4-vant/src/views/Home.vue
@@ -110,6 +110,7 @@ export default {
         query: {
           text: item.text,
           routerType: 'push',
+          msgid:item.val === "about" ? "100":null
         },
       });
     },
