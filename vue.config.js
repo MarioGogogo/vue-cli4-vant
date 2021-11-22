@@ -8,11 +8,7 @@ const SkeletonWebpackPlugin = require('vue-skeleton-webpack-plugin');
 function resolve(dir) {
   return path.join(__dirname, dir);
 }
-console.log(
-  '%c 🍌 process.env.NODE_ENV: ',
-  'font-size:20px;background-color: #FFDD4D;color:#fff;',
-  process.env.NODE_ENV,
-);
+
 module.exports = {
   publicPath: './',
   // 将构建好的文件输出到哪里
@@ -81,17 +77,11 @@ module.exports = {
       // 访问https://unpkg.com/element-ui/lib/theme-chalk/index.css获取最新版本
       css: [],
       js: [
-        '//cdn.bootcdn.net/ajax/libs/vue/2.6.12/vue.js', // 访问https://unpkg.com/vue/dist/vue.min.js获取最新版本
-        '//cdn.bootcdn.net/ajax/libs/vue-router/3.0.6/vue-router.min.js',
-        '//cdn.bootcdn.net/ajax/libs/vuex/3.1.1/vuex.min.js',
-        '//cdn.bootcdn.net/ajax/libs/axios/0.19.0/axios.min.js',
+        '//unpkg.zhimg.com/vue@2.6.10/dist/vue.min.js', // 访问https://unpkg.com/vue/dist/vue.min.js获取最新版本
+        '//unpkg.zhimg.com/vue-router@3.0.6/dist/vue-router.min.js',
+        '//unpkg.zhimg.com/vuex@3.1.1/dist/vuex.min.js',
+        '//unpkg.zhimg.com/axios@0.19.0/dist/axios.min.js',
       ],
-      // js: [
-      //   '//unpkg.zhimg.com/vue@2.6.10/dist/vue.min.js', // 访问https://unpkg.com/vue/dist/vue.min.js获取最新版本
-      //   '//unpkg.zhimg.com/vue-router@3.0.6/dist/vue-router.min.js',
-      //   '//unpkg.zhimg.com/vuex@3.1.1/dist/vuex.min.js',
-      //   '//unpkg.zhimg.com/axios@0.19.0/dist/axios.min.js',
-      // ],
     };
     // 如果使用多页面打包，使用vue inspect --plugins查看html是否在结果数组中
     config.plugin('html').tap((args) => {

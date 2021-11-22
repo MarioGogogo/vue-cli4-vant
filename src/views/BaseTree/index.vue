@@ -9,50 +9,50 @@
     </tree-node>
     <br>
     <van-button @click="getSelectData">获取选中的名称</van-button>
-    <p>{{selectContent}}</p>
+    <p>{{ selectContent }}</p>
   </div>
 </template>
 
 <script>
-import {treeData,roomData} from "@/views/BaseTree/data";
-import TreeNode from "@/views/BaseTree/treeNode";
+import {treeData, roomData} from '@/views/BaseTree/data';
+import TreeNode from '@/views/BaseTree/treeNode';
 
 export default {
-  name: "basetree",
+  name: 'basetree',
   components: {
     TreeNode,
   },
   data() {
     return {
       treeData: roomData,
-      selectContent:""
-    }
+      selectContent: '',
+    };
   },
   methods: {
     handleCheckChange() {
-      console.log("选中234234234")
+      console.log('选中234234234');
     },
-    emitEvent (eventName, data) {
+    emitEvent(eventName, data) {
       // this.$emit(eventName, data, this.treeData);
     },
-    getSelectData(){
-      console.log('this.treeData',this.treeData)
-      let arr = []
-      this.treeData.forEach(item=>{
-          if(item.child){
-          item.child.forEach(v=> {
-                  if(v.checked){
-                    arr.push(v.name)
-                  }
-               })
-          }
-      })
-      console.log("选中数据",arr)
+    getSelectData() {
+      console.log('this.treeData', this.treeData);
+      let arr = [];
+      this.treeData.forEach(item => {
+        if (item.child) {
+          item.child.forEach(v => {
+            if (v.checked) {
+              arr.push(v.name);
+            }
+          });
+        }
+      });
+      console.log('选中数据', arr);
       this.selectContent = arr;
-    }
+    },
   },
 
-}
+};
 </script>
 
 <style scoped>
