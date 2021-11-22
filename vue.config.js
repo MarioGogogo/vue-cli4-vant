@@ -8,6 +8,9 @@ const SkeletonWebpackPlugin = require('vue-skeleton-webpack-plugin');
 function resolve(dir) {
   return path.join(__dirname, dir);
 }
+// 判断打包环境
+const IS_PROD = ['production', 'prod'].includes(process.env.NODE_ENV);
+
 
 module.exports = {
   publicPath: './',
@@ -22,13 +25,13 @@ module.exports = {
   // 默认情况下 babel-loader 会忽略所有 node_modules 中的文件。如果你想要通过 Babel 显式转译一个依赖，可以在这个选项中列出来。
   transpileDependencies: [],
   // 生产环境关闭 source map
-  productionSourceMap: false,
+  productionSourceMap: !IS_PROD,      // 'production' !== process.env.NODE_ENV,
   // lintOnSave: true,
   // 配置css
   css: {
     // 是否使用css分离插件 ExtractTextPlugin
     extract: true,
-    sourceMap: true,
+    sourceMap: !IS_PROD,
     // css预设器配置项
     loaderOptions: {
       postcss: {
@@ -57,11 +60,9 @@ module.exports = {
       args[0].terserOptions.compress.drop_console = true;
       return args;
     });
-
-    if ('production' === process.env.NODE_ENV) {
+    if (IS_PROD) {
       config.optimization.delete('splitChunks');
     }
-
     const svgRule = config.module.rule('svg');
     svgRule.uses.clear();
     svgRule.exclude.add(/node_modules/);
@@ -93,7 +94,6 @@ module.exports = {
     imagesRule.exclude.add(resolve('src/components/icon/svg'));
     config.module.rule('images').test(/\.(png|jpe?g|gif|svg)(\?.*)?$/);
   },
-
   configureWebpack: (config) => {
     config.externals = {
       vue: 'Vue',
@@ -120,7 +120,7 @@ module.exports = {
       }),
     );
     // 线上环境开启压缩
-    if (process.env.NODE_ENV === 'production') {
+    if (IS_PROD) {
       config.plugins.push(new BundleAnalyzerPlugin());
 
       config.plugins.push(
@@ -163,6 +163,9 @@ module.exports = {
           },
         },
       };
+    };
+    if(!IS_PROD){
+      config.devtool = "source-map"
     }
   },
 

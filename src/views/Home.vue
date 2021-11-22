@@ -1,24 +1,24 @@
 <!--
  * @Author: your name
  * @Date: 2020-11-13 00:34:57
- * @LastEditTime: 2021-11-08 14:32:36
+ * @LastEditTime: 2021-11-22 17:33:38
  * @LastEditors: MarioGo
  * @Description: In User Settings Edit
  * @FilePath: /vue-cli4-vant/src/views/Home.vue
 -->
 <template>
   <div class="home">
-    <van-nav-bar title="首页" :safe-area-inset-top="true" />
+    <van-nav-bar title="Vue2.xDemo集合" :safe-area-inset-top="true" />
     <van-pull-refresh v-model="isLoading" success-text="刷新成功" @refresh="onRefresh">
       <van-grid :column-num="3">
         <template>
           <van-grid-item
-            v-for="value in modules"
-            :key="value"
+            v-for="item in modules"
+            :key="item.val"
             :icon="randomIcons()"
-            :text="value"
+            :text="item.text"
             dot
-            @click="itemClick(value)"
+            @click="itemClick(item)"
           />
         </template>
       </van-grid>
@@ -29,47 +29,90 @@
 
 <script>
 export default {
-  name: "home",
+  name: 'home',
   data() {
     return {
-      modules: ['longlist','drag', 'promise', 'about', 'vmodal', 'vcomp', 'ifrom', 'findcomp', 'checkbox', 'alert', 'table', 'slotscope', 'iscomp', 'tree', 'watermark', 'wards', 'forcUpdate', 'animation', "timeline", "svgcircle","canvas","basetree"],
+      modules: [
+        { text: '简单长列表', val: 'easylonglist' },
+        { text: '长列表', val: 'longlist' },
+        { text: '拖拽', val: 'drag' },
+        { text: '异步Promise', val: 'promise' },
+        { text: '关于', val: 'about' },
+        { text: '双向绑定vmodel', val: 'vmodal' },
+        { text: 'vcomp', val: 'vcomp' },
+        { text: '表格', val: 'ifrom' },
+        { text: '找父兄弟组件', val: 'findcomp' },
+        { text: '选框', val: 'checkbox' },
+        { text: '弹框', val: 'alert' },
+        { text: '表格', val: 'table' },
+        { text: '作用域插槽', val: 'slotscope' },
+        { text: '是否组件', val: 'iscomp' },
+        { text: '树', val: 'tree' },
+        { text: '水印', val: 'watermark' },
+        { text: 'wards', val: 'wards' },
+        { text: '强制更新周期', val: 'forcUpdate' },
+        { text: '动画', val: 'animation' },
+        { text: '时间轴', val: 'timeline' },
+        { text: '圆svg', val: 'svgcircle' },
+        { text: 'canvas', val: 'canvas' },
+        { text: '基础树', val: 'basetree' },
+      ],
       active: 0,
       count: 0,
       isLoading: false,
       finished: false,
     };
   },
-  mounted () {
+  mounted() {
     setTimeout(() => {
       this.loading = false;
-    }, 2000)
+    }, 2000);
   },
   methods: {
     randomIcons() {
-      const icons = ['logistics', 'bulb-o', 'tv-o', 'hot-sale-o', 'photo-o', 'fire-o', 'shopping-cart-o', 'comment-o', 'gem-o', 'gift-o', 'point-gift-o', 'bag-o', 'gold-coin-o', 'play-circle-o']
-      const index = Math.floor(Math.random() * icons.length)
-      return icons[index]
+      const icons = [
+        'logistics',
+        'bulb-o',
+        'tv-o',
+        'hot-sale-o',
+        'photo-o',
+        'fire-o',
+        'shopping-cart-o',
+        'comment-o',
+        'gem-o',
+        'gift-o',
+        'point-gift-o',
+        'bag-o',
+        'gold-coin-o',
+        'play-circle-o',
+      ];
+      const index = Math.floor(Math.random() * icons.length);
+      return icons[index];
     },
     onRefresh() {
-      this.$api.article.articleDetail('id', {
-        api: 123
-      }).then(res => {
-        // 执行某些操作
-        console.log('res :>> ', res);
-      })
+      this.$api.article
+        .articleDetail('id', {
+          api: 123,
+        })
+        .then((res) => {
+          // 执行某些操作
+          console.log('res :>> ', res);
+        });
       setTimeout(() => {
         this.isLoading = false;
         this.count++;
       }, 1000);
     },
-    itemClick(event) {
-      console.log('event :>> ', event);
+    itemClick(item) {
+      console.log('event :>> ', item);
       this.$router.push({
-        path: `/v1.0/${event}`,
+        path: `/v1.0/${item.val}`,
         query: {
-          routerType: 'push'
-        }
-      })
+          text: item.text,
+          routerType: 'push',
+          msgid:item.val === "about" ? "100":null
+        },
+      });
     },
   },
 };

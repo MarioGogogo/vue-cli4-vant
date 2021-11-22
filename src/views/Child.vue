@@ -1,14 +1,14 @@
 <!--
  * @Author: your name
  * @Date: 2020-11-27 23:05:26
- * @LastEditTime: 2021-11-08 14:32:00
+ * @LastEditTime: 2021-11-09 16:19:39
  * @LastEditors: MarioGo
  * @Description: In User Settings Edit
  * @FilePath: /vue-cli4-vant/src/views/Child.vue
 -->
 <template>
   <div class="child">
-    <van-nav-bar title="子页面" left-arrow :safe-area-inset-top="true" @click-left="onClickLeft"  fixed placeholder />
+    <van-nav-bar :title="$route.query.text" left-arrow :safe-area-inset-top="true" @click-left="onClickLeft"  fixed placeholder />
     <router-view class="view"></router-view>
   </div>
 </template>
