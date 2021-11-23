@@ -2,7 +2,7 @@
  * vue.config.js配置文件
  */
 const path = require('path');
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const CompressionPlugin = require('compression-webpack-plugin'); // 引入gzip压缩插件
 const SkeletonWebpackPlugin = require('vue-skeleton-webpack-plugin');
 function resolve(dir) {
@@ -127,7 +127,7 @@ module.exports = {
     );
     // 线上环境开启压缩
     if (IS_PROD) {
-      config.plugins.push(new BundleAnalyzerPlugin());
+      // config.plugins.push(new BundleAnalyzerPlugin());
 
       config.plugins.push(
         new CompressionPlugin({

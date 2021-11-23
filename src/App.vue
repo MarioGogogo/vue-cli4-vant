@@ -61,6 +61,9 @@ export default {
       if (to.query.clearTask) {
         this.virtualTaskStack = ['main']
       }
+      this.msgid = this.$route.query.msgid;
+      console.log( this.$parent);
+     
     }
   }
 }

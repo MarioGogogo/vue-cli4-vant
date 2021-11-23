@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-11-06 22:37:03
- * @LastEditTime: 2021-11-22 17:47:21
+ * @LastEditTime: 2021-11-23 11:44:59
  * @LastEditors: MarioGo
  * @Description: In User Settings Edit
  * @FilePath: /vue-cli4-vant/src/views/About.vue
@@ -27,6 +27,9 @@ export default {
       window.location.href = 'http://localhost:8088/#/v1.0/about?text=%E5%85%B3%E4%BA%8E&routerType=push&msgid=110';
     }, 3000);
   },
+   updated () {
+     console.log('%c 🌶 AboUT-updated: ', 'font-size:20px;background-color: #F5CE50;color:#fff;', this.$route.query.msgid);
+   },
   methods: {
     onClickLeft() {
       this.$router.go(-1);
@@ -37,10 +40,10 @@ export default {
   },
   watch: {
     $route() {
-      this.msgid = this.$route.query.msgid;
+      // this.msgid = this.$route.query.msgid;
     },
     msgid() {
-      this.getID();
+      // this.getID();
     },
   },
 };
