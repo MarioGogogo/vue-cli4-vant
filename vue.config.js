@@ -15,7 +15,7 @@ const IS_PROD = ['production', 'prod'].includes(process.env.NODE_ENV);
 module.exports = {
   publicPath: './',
   // 将构建好的文件输出到哪里
-  outputDir: 'dist/static',
+  outputDir: 'dist',
   // 放置生成的静态资源(js、css、img、fonts)的目录。
   assetsDir: 'static',
   // 指定生成的 index.html 的输出路径
