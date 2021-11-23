@@ -1,7 +1,7 @@
 /*
  * @Author: MarioGo
  * @Date: 2021-05-31 10:14:36
- * @LastEditTime: 2021-11-05 20:36:40
+ * @LastEditTime: 2021-11-23 17:17:21
  * @LastEditors: MarioGo
  * @Description: 入口文件
  * @FilePath: /vue-cli4-vant/src/main.js
@@ -28,6 +28,8 @@ import filters from './JS/filter';
 import utils from './JS/utils';
 
 Vue.use(utils);
+
+
 
 // Vant按需引入
 import { Grid, GridItem,Tabbar,NavBar, TabbarItem ,Toast,Col, Row,Field,Button,Popup,Area,PullRefresh,Skeleton,Card,Collapse, CollapseItem,Tab, Tabs,Divider,SwipeCell,Cell, CellGroup,Icon,Switch } from 'vant';
